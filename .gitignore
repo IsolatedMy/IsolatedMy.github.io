@@ -17,6 +17,8 @@ node_modules/
 /.bundle/
 /vendor/bundle
 *.gem
+.DS_Store
+*/.DS_Store
 
 yarn.lock
 package-lock.json
