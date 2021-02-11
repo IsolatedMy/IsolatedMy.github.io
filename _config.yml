@@ -117,7 +117,9 @@ comments:
 
   ## Disqus
   disqus:
-    shortname: IsolatedMy # the Disqus shortname for the site
+    shortname: "IsolatedMy" # the Disqus shortname for the site
+    enable: true
+    count: true
 
   ## Gitalk
   # please refer to https://github.com/gitalk/gitalk for more info.

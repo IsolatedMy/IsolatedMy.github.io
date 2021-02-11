@@ -7,6 +7,8 @@ pre.lineno {
 }
 .highlight > pre {
   color: $highlight-foreground;
+  overflow-x: auto;
+  overflow-y: auto;
   background-color: $highlight-background !important;
   .c   { color: $highlight-comment; } /* Comment */
   .err { color: $highlight-red; } /* Error */
