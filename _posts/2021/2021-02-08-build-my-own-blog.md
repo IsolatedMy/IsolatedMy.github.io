@@ -4,7 +4,7 @@ comments: true
 mathjax: true
 layout: articles
 toc: true
-tags: ["website", "jekyll"]
+tags: ["website", "jekyll", "Mac"]
 ---
 
 这篇文章的主要目的是记录笔者在搭建博客中遇到的问题，希望能够在之后遇到相关问题时起到帮助。除此之外还充当了备忘录，同时也记录了博客的搭建过程。主要的内容包括jekyll的使用和自身遇到问题的记录。
@@ -111,7 +111,8 @@ jekyll官网提供了大量的博客模板，可以先挑选一个自己喜欢�
 1. Github Pages的解释器与通常使用的解释器并不相同，通常使用的是Kramdown，这一部分可以通过`_config.yml`中的`markdown`项设置;
 2. 如果需要在网页中使用数学公式，需要额外调用Mathjax插件。在_config.yml中添加`mathjax: true`，或者在博客头事项(Front Matter)中设置`mathjax: true`；
 3. 修改网站layout应该对`_layout`和`_includes`文件夹下的相应文件做修改，而不是直接修改`_site`下的文件；
-4. 本博客的评论区使用的是Disqus。在`_config.yml`文件做相应修改的同时，还需要在`_layouts`文件夹下的html文件中添加代码。代码在Disqus提供的教程中会提供。
+4. 本博客的评论区使用的是Disqus。在`_config.yml`文件做相应修改的同时，还需要在`_layouts`文件夹下的html文件中添加代码，该代码在Disqus提供的教程中会提供。此外，如果不能访问外网，Disqus评论栏不会显示；
+5. 每次提交之后github上的网页都需要一段时间更新，如果出现问题github会给邮箱发送邮件
 
 参考链接：
 1. [TeXt Theme-快速开始](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start)
