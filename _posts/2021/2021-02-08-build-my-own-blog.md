@@ -1,5 +1,5 @@
 ---
-title: 个人博客搭建
+title: 个人博客搭建(一)
 comments: true
 mathjax: true
 layout: articles

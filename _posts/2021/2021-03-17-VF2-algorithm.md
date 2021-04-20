@@ -1,5 +1,5 @@
 ---
-title: 有向图上的VF2算法
+title: 有向图上的VF2算法实现
 comments: true
 mathjax: true
 layout: articles
@@ -316,12 +316,7 @@ bool feasibilityRules(Graph & pattern, Graph & graph, int n, int m) {
 }
 ```
 
-实现算法本体的函数`recursiveMatch`以递归为基本思路。这里简化了原算法中的操作。原算法中，$P(s)$中的有序对$(n,m)$满足$n\in T_1^{in},m\in T_2^{in}$或者$n\in T_1^{out}, m\in T_2^{out}$。但是在我的实现中，算法的搜索思路是依序对模式中的每个顶点寻找其在图中的映射顶点，显然这种思路会带来更大的开销，但是比较简单。如果需要按照原算法实现，我认为需要额外考虑两个地方：
-
-1. 往$M(s)$中添加的第一个有序对的选择；
-2. $T_i^{in}$和$T_i^{out},i=1,2$的维护
-
-第一个问题可以从$P^d(s)$中选择，或者可以考虑在模式中找到对应顶点最少的某一标签值$l$，首先为标签值为$l$的顶点找到其在图中的对应。第二个问题的维护也比较简单。
+实现算法本体的函数`recursiveMatch`以递归为基本思路。这里简化了原算法中的操作。原算法中，$P(s)$中的有序对$(n,m)$满足$n\in T_1^{in},m\in T_2^{in}$或者$n\in T_1^{out}, m\in T_2^{out}$。但是在我的实现中，算法的搜索思路是依序对模式中的每个顶点寻找其在图中的映射顶点，显然这种思路会带来更大的开销，但是比较简单。
 
 ```c++
 void recursiveMatch(Graph & pattern, Graph & graph, int i) {
