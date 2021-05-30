@@ -4,10 +4,10 @@ comments: true
 mathjax: true
 layout: articles
 toc: true
-tags: ["overleaf", "latex"]
+tags: ["latex", "note"]
 ---
 
-这篇文章记录的是在overleaf上写latex时，我作为一个latex新手遇到的问题。
+这篇文章记录的是在overleaf上写latex时，我作为一个latex新手遇到的问题。下面所使用的编译器大部分是`pdfLatex`。
 
 <!--more-->
 
@@ -84,7 +84,7 @@ $\alpha, \beta \in \mathbb{C}$
 
 但随之产生的新的问题是，在双栏环境下代码有可能会超出当前所在栏的边界。为了知道修改的量是什么去搜索这些量但是得到的搜索结果少的可怜，而且大部分都与此无关。
 
-#### 表格制作
+#### 大规模表格
 
 由于生成的表格内容过多，利用[Excel2Latex项目](https://github.com/krlmlr/Excel2LaTeX)提供的工具直接将表格转换成了latex格式，但是在使用时对于其中使用到的`\midrule`和`\rowcolor`指令会产生`Undefined control sequence`错误。其中`\midrule`指令产生的错误可以通过使用包`booktabs`解决，即使用指令`\usepackage{booktabs}`。而虽然查找到的导入`\rowcolor`指令的方法是`\usepackage[table]{xcolor}`，但是在使用时一直会产生`option clash for package xcolor`的问题。最后，找到[有人提到](https://tex.stackexchange.com/questions/74921/how-to-resolve-option-clash-for-package-xcolor)使用包`colortbl`即可解决`\rowcolor`指令产生的问题。
 
@@ -98,3 +98,74 @@ $\alpha, \beta \in \mathbb{C}$
 ```
 
 从而实现首段内容2个字符缩进。
+
+#### BibTeX
+
+在使用[Spin期刊](https://www.worldscientific.com/worldscinet/spin)提供的latex模板时，在导入部分文献时一直产生`BibTeX: You can't pop an empty literal stack for entry`的错误。通过检查发现几点：
+
++ overleaf提供的错误位置位于期刊提供的`.bst`文件当中
++ 出错的都是inproceedings文献类型
+
+在网上查找相关的解决方案后，推断应该是`.bst`文件中处理inproceedings文献的函数出了问题。最后因为不清楚可不可以修改`.bst`文件而放弃修改。这里放上我找到的关于`.bst`文件语法说明的[pdf文件](https://github.com/digitalheir/bibtex-js/blob/master/Tame%20the%20BeaST.pdf)。
+
+#### 显示子图
+
+在使用`\subfigure[]{}`命令时，位于中括号中的子标题未能正确显示，可能是因为没有导入`subfigure`包。
+
+#### underfull hbox
+
+参考[官方网站](https://www.overleaf.com/learn/how-to/Understanding_underfull_and_overfull_box_warnings)对这一问题的说明。在Latex编译过程可能产生如下的警告，但是并不会影响显示：
+
+```
+Underfull hbox (badness <value>) in paragraph at lines **--***
+Overfull hbox (<value>pt too wide) in paragraph at lines ***--***
+```
+
+underfull意思是此处排版过于稀疏，overfull是说该出内容过多，超过了设定的印刷范围。
+
+#### `xspace` 未定义
+
+可能是因为没有导入相关的包，使用`\usepackage{xspace}`即可。
+
+#### 缺失 \item
+
+报错如下：
+
+```
+LaTeX Error: Something's wrong -- perheps a missing \item.
+...
+1.24 \end{thebibliography}
+...
+```
+
+原因可能在于此时文章中没有使用任何的引用，即`\cite{}`指令。除此之外，也有可能是`*.bbl`文件的问题，具体参考[博客](https://blog.csdn.net/WangJiankun_ls/article/details/78061176)。
+
+#### Algpseudocode
+
+由于在IEEE环境下没办法使用`algorithm2e`包，见其提供的`IEEEtran_HOWTO.pdf`:
+
+> However, do *not* use the floating algorithm environment of algorithm.sty (also by Williams and Brito) or algorithm2e.sty (by Christophe Fiorio) as the only floating structures IEEE uses are figures and tables.
+
+这里我使用了`algpseudocode`包和`algorithm`包完成展示伪代码的任务，这里展示找到的一个简单的使用[样例](https://www.overleaf.com/latex/examples/algorithmicx-algpseudocode-example/bqdwppsxcyrb)：
+
+```latex
+\begin{algorithmic}
+\Require $n \geq 0$
+\Ensure $y = x^n$
+\State $y \Leftarrow 1$
+\State $X \Leftarrow x$
+\State $N \Leftarrow n$
+\While{$N \neq 0$}
+\If{$N$ is even}
+  \State $X \Leftarrow X \times X$
+  \State $N \Leftarrow \frac{N}{2} $  \Comment{This is a comment}
+\ElsIf{$N$ is odd}
+  \State $y \Leftarrow y \times X$
+  \State $N \Leftarrow N - 1$
+\EndIf
+\EndWhile
+\end{algorithmic}
+
+\end{document}
+```
+
