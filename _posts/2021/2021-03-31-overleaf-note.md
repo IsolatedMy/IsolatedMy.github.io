@@ -27,6 +27,7 @@ tags: ["latex", "note"]
 需要使用geometry宏包以自由设置页面属性。该宏包可以让我们自由设置上下左右的页面边距。其中left, right, top, bottom分别代表左右上下的页面边距。
 
 ```latex
+\usepackage{geometry}
 \geometry{left=3.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
 ```
 
@@ -90,14 +91,22 @@ $\alpha, \beta \in \mathbb{C}$
 
 #### 首行缩进
 
-跟在`\section`或者`\subsection`等命令后的第一段文字不会缩进。这一点的解决办法参考了[博客](https://blog.csdn.net/MineralterMan/article/details/8832782)。在文档的导言区添加：
+跟在`\section`或者`\subsection`等命令后的第一段文字不会缩进。
+
+可以采用`\hspace{<number>}`指令:
+
+```latex
+\hspace{2em}
+```
+
+或者参考[博客](https://blog.csdn.net/MineralterMan/article/details/8832782)，在文档首部添加：
 
 ```latex
 \usepackage{identfirst}
 \setlength{\parindent}{2em}
 ```
 
-从而实现首段内容2个字符缩进。
+从而实现首段内容2个字符缩进，并且使除第一段的缩进为2em从而使得段与段之间对齐。
 
 #### BibTeX
 

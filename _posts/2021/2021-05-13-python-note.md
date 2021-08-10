@@ -41,7 +41,7 @@ f.seek(0)
 
 #### 命令行参数调用
 
-利用`sys`包中的`argv`参数：
+利用`sys`包中的`argv`变量：
 
 ```python
 import sys
