@@ -7,11 +7,11 @@ toc: true
 tags: ["latex", "note"]
 ---
 
-这篇文章记录的是在overleaf上写latex时，我作为一个latex新手遇到的问题。下面所使用的编译器大部分是`pdfLatex`。
+这篇文章记录的是在overleaf上写latex时，我作为一个latex新手遇到的问题。下面所使用的编译器无特别说明都是`pdfLatex`。
 
 <!--more-->
 
-#### 页面大小和页面边距
+#### [Tips]页面大小和页面边距
 
 默认页面大小为A4纸。如果想要其他的页面大小，只需要在`\document[]{}`的`[]`中填入需要的页面大小。除此之外，在`[]`内还能够设置文档的字体大小。
 
@@ -31,7 +31,7 @@ tags: ["latex", "note"]
 \geometry{left=3.0cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
 ```
 
-#### 数学符号
+#### [Error]数学符号
 
 在使用如下公式时，XeLatex产生错误`Undefined control sequence`。大意是编译器无法理解使用的某些指令，问题出在`\mathbb`指令上
 
