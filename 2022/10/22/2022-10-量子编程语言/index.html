@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.1">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -28,7 +28,7 @@
 <meta property="og:description" content="本文分享对量子编程语言的调研。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-22T06:00:03.000Z">
-<meta property="article:modified_time" content="2022-10-24T07:11:24.719Z">
+<meta property="article:modified_time" content="2023-03-14T13:19:57.979Z">
 <meta property="article:author" content="Mingyu Chen">
 <meta property="article:tag" content="Quantum Computing">
 <meta name="twitter:card" content="summary">
@@ -186,7 +186,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-24 15:11:24" itemprop="dateModified" datetime="2022-10-24T15:11:24+08:00">2022-10-24</time>
+                <time title="修改时间：2023-03-14 21:19:57" itemprop="dateModified" datetime="2023-03-14T21:19:57+08:00">2023-03-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -194,7 +194,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/article/" itemprop="url" rel="index"><span itemprop="name">article</span></a>
+                  <a href="/categories/Article/" itemprop="url" rel="index"><span itemprop="name">Article</span></a>
                 </span>
             </span>
 
@@ -212,14 +212,18 @@
         <p>本文分享对量子编程语言的调研。</p>
 <span id="more"></span>
 <p>首先，什么是量子编程？</p>
-<p>维基百科<sup>[1]</sup>上给出的解释是：<em>Quantum programming is the process of assembling sequencess of instructions, called quantum circuits, that are capable of running on a quantum computer. Quantum programming languages help express quantum algorithms using high-level constructs</em>。量子编程是汇编称作量子线路的指令序列的过程。所谓量子线路，它能够运行在量子计算机上。量子编程语言帮助使用高级结构表达量子算法。</p>
-<p>《量子编程基础》<sup>[2]</sup>认为，量子编程主要研究如何在未来的量子计算机上编程，包含如下三个问题：</p>
+<p>维基百科上给出的解释是：<em>Quantum programming is the process of
+assembling sequencess of instructions, called quantum circuits, that are
+capable of running on a quantum computer. Quantum programming languages
+help express quantum algorithms using high-level
+constructs</em>。量子编程是汇编称作量子线路的指令序列的过程。所谓量子线路，它能够运行在量子计算机上。量子编程语言帮助使用高级结构表达量子算法。</p>
+<p>《量子编程基础》认为，量子编程主要研究如何在未来的量子计算机上编程，包含如下三个问题：</p>
 <ul>
 <li>现有的编程方法和技术如何扩展到量子计算机上？</li>
 <li>什么样的编程方法和技术可以有效利用量子计算的特有能力？</li>
 <li>如何寻找抽象的编程范式和编程模型等才能最大化地利用量子计算的特有能力——并行性？</li>
 </ul>
-<p>前者对量子编程的定义偏向于量子编译的概念。在经典计算中，编译<sup>3</sup>过程负责将某种编程语言写成的源代码转换成另一种编程语言。后者通过量子编程应该研究的问题来定义它。这三个问题中，第一个问题是要求从经典经验出发研究量子计算；第二个问题要求从量子系统的特征出发研究，第三个问题是第二个问题的细化。</p>
+<p>前者对量子编程的定义偏向于量子编译的概念。在经典计算中，编译过程负责将某种编程语言写成的源代码转换成另一种编程语言。后者通过量子编程应该研究的问题来定义它。这三个问题中，第一个问题是要求从经典经验出发研究量子计算；第二个问题要求从量子系统的特征出发研究，第三个问题是第二个问题的细化。</p>
 <p>结合两者，量子编程语言应该</p>
 <ul>
 <li>具有表达已有量子算法的能力</li>
@@ -244,8 +248,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/09/03/latex/" rel="prev" title="latex使用笔记">
-      <i class="fa fa-chevron-left"></i> latex使用笔记
+    <a href="/2022/02/05/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
     <a href="/2022/10/23/2022-10-%E5%9C%A8C++%E7%A8%8B%E5%BA%8F%E4%B8%AD%E8%B0%83%E7%94%A8MLIR%E5%87%BD%E6%95%B0/" rel="next" title="在C++程序中调用MLIR函数">
@@ -329,7 +333,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -360,7 +364,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -415,6 +419,8 @@
 
 
 
+
+  
 
   
 
