@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 7.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"isolatedmy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"isolatedmy.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="记录在latex写作过程中遇到的问题。">
@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://isolatedmy.github.io/2023/03/14/2023-latex-note/latex-1.png">
 <meta property="og:image" content="https://isolatedmy.github.io/2023/03/14/2023-latex-note/latex-2.png">
 <meta property="article:published_time" content="2023-03-14T13:07:56.000Z">
-<meta property="article:modified_time" content="2023-03-16T06:57:59.970Z">
+<meta property="article:modified_time" content="2025-07-15T09:09:31.176Z">
 <meta property="article:author" content="Mingyu Chen">
 <meta property="article:tag" content="latex">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-16 14:57:59" itemprop="dateModified" datetime="2023-03-16T14:57:59+08:00">2023-03-16</time>
+                <time title="修改时间：2025-07-15 17:09:31" itemprop="dateModified" datetime="2025-07-15T17:09:31+08:00">2025-07-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,8 +214,8 @@
       
         <p>记录在latex写作过程中遇到的问题。</p>
 <span id="more"></span>
-<h3 id="问题一-如何在列表中打印直引号">【问题一】
-如何在列表中打印直引号？</h3>
+<h3 id="一-添加直引号">【一】 添加直引号</h3>
+<h4 id="在代码块中添加直引号">1.在代码块中添加直引号</h4>
 <p>参考链接：<a
 target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/166790/how-can-i-get-straight-double-quotes-in-listings">How
 can I get straight double quotes in listings?</a></p>
@@ -223,13 +223,20 @@ can I get straight double quotes in listings?</a></p>
 <p>在latex的lstlisting代码块中，如果想要在其中输入双引号，如下所示</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;listings&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;lstlisting&#125;</span><br><span class="line">echo &quot;Hello, world!&quot;</span><br><span class="line">\end&#123;lstlisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>得到的大概是如下的效果。两个引号都是向下弯的双引号。我希望能够将双引号替换成直引号。</p>
-<p><img src="latex-1.png" /></p>
+<!-- 
+![](latex-1.png)
+-->
+<p><img src="https://isolatedmy.github.io/2023/03/14/2023-latex-note/latex-1.png" width="60%"></p>
 <p>解决方法：添加下述package并将lstlisting中的<code>upquote</code>设置为true</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[T1]&#123;fontenc&#125;</span><br><span class="line">\usepackage&#123;textcomp&#125;</span><br><span class="line">\lstset&#123;upquote=true&#125;</span><br><span class="line"></span><br><span class="line">\usepackage&#123;listings&#125;</span><br><span class="line">\begin&#123;document&#125;</span><br><span class="line">\begin&#123;lstlisting&#125;</span><br><span class="line">echo &quot;Hello, world!&quot;</span><br><span class="line">\end&#123;lstlisting&#125;</span><br><span class="line">\end&#123;document&#125;</span><br></pre></td></tr></table></figure>
 <p>生成图片如下所示</p>
-<p><img src="latex-2.png" /></p>
+<p><img src="https://isolatedmy.github.io/2023/03/14/2023-latex-note/latex-2.png" width="60%"></p>
+<h4 id="在正文中添加直引号">2.在正文中添加直引号</h4>
+<p>可以参考链接<a
+target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/52529/straight-quotes">Straight
+quotes?</a>的第一个回答。注意这里使用了<code>\usepackage&#123;mathptmx&#125;</code>这个包，这会导致数学模式下的花体<code>\mathcal</code>出现问题。此时<code>\mathcal</code>的效果会和<code>\mathscr</code>相同。我没找解决方法，直接将这个包移除了。</p>
 <h3
-id="问题二使用lstdefinelanguage">【问题二】使用<code>lstdefinelanguage</code></h3>
+id="二使用lstdefinelanguage">【二】使用<code>lstdefinelanguage</code></h3>
 <p>参考链接</p>
 <ol type="1">
 <li><a
@@ -238,8 +245,7 @@ symbols with lstdefinelanguage in latex</a></li>
 <li><a target="_blank" rel="noopener" href="https://texdoc.org/serve/listings.pdf/0">The Listings
 Package</a> 3.2节和4.7节</li>
 </ol>
-<h3 id="问题三package-hyperref-warning">【问题三】Package hyperref
-Warning</h3>
+<h3 id="三package-hyperref-warning">【三】Package hyperref Warning</h3>
 <p>参考链接：https://tex.stackexchange.com/questions/10555/hyperref-warning-token-not-allowed-in-a-pdf-string</p>
 <p>当我在标题处使用数学公式时，例如</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\subsubsection&#123;Evaluating the Model for $k_c$ and $m_c$&#125;</span><br></pre></td></tr></table></figure>
@@ -247,23 +253,64 @@ Warning</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Package hyperref Warning: Token not allowed in a PDF string (Unicode): removing `subscript&#x27; on input line 284.</span><br><span class="line">Package hyperref Warning: Token not allowed in a PDF string (Unicode): removing `math shift&#x27; on input line 284.</span><br></pre></td></tr></table></figure>
 <p>在网上搜索，查到了如上参考链接。为数学公式添加<code>\texorpdfstring</code>即可解决问题</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\subsubsection&#123;Evaluating the Model for \texorpdfstring&#123;$k_c$ and $m_c$&#125;&#123;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="问题四数学公式多处对齐">【问题四】数学公式多处对齐</h3>
+<h3 id="四数学公式多处对齐">【四】数学公式多处对齐</h3>
 <p>参考链接：<a
 target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/56627/multiple-alignment">Multiple
 alignment</a></p>
 <p>在数学公式中实现多处对齐，此时<code>\begin&#123;align&#125;</code>环境无法满足要求。因此使用amsmath包中的<code>alignat</code>环境。如下所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;alignat*&#125;&#123;3&#125;</span><br><span class="line">  &amp;[x \mapsto s]x &amp;&amp;= s &amp;&amp; \\</span><br><span class="line">  &amp;[x \mapsto s]y &amp;&amp;= y \qquad &amp;&amp;\text&#123;als &#125; y\neq x \\</span><br><span class="line">  &amp;[x \mapsto s](\lambda(y)t_1) &amp;&amp;= \lambda(y)[x \mapsto s]t_1 \qquad &amp;&amp;\text&#123;als &#125; y \neq x \text&#123; en &#125; y \not \in FV(s) \\</span><br><span class="line">  &amp;[x \mapsto s](t_1 \; t_2)&amp;&amp;= ([x \mapsto s]t_1)\;([x \mapsto s]t_2) &amp;&amp;</span><br><span class="line">\end&#123;alignat*&#125;</span><br></pre></td></tr></table></figure>
 <p><span class="math display">\[
 \begin{alignat*}{3}
   &amp;[x \mapsto s]x &amp;&amp;= s &amp;&amp; \\
   &amp;[x \mapsto s]y &amp;&amp;= y \qquad &amp;&amp;\text{als } y\neq x
 \\
   &amp;[x \mapsto s](\lambda(y)t_1) &amp;&amp;= \lambda(y)[x \mapsto
-s]t_1 \qquad &amp;&amp;\text{als } y \neq x \text{ en   } y \not \in
-FV(s) \\
+s]t_1 \qquad &amp;&amp;\text{als } y \neq x \text{ en } y \not \in FV(s)
+\\
   &amp;[x \mapsto s](t_1 \; t_2)&amp;&amp;= ([x \mapsto s]t_1)\;([x
 \mapsto s]t_2) &amp;&amp;
 \end{alignat*}
 \]</span></p>
+<h3 id="五背景色与换行">【五】背景色与换行</h3>
+<p>在latex中，如果直接使用<code>xcolor</code>宏包提供的<code>\colorbox</code>指令添加背景色，但是其添加背景色的文本中无法实现断行。对此，参考StackExchange的<a
+target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/48501/soul-broken-highlighting-with-xcolor-when-using-selectcolormodel/48549#48549">问题</a>，我们可以用如下命令
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;xcolor&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[normalem]&#123;ulem&#125; <span class="comment">% use normalem to protect \emph</span></span><br><span class="line"><span class="keyword">\newcommand</span><span class="keyword">\hl</span>&#123;<span class="keyword">\bgroup</span><span class="keyword">\markoverwith</span></span><br><span class="line">  &#123;<span class="keyword">\textcolor</span>&#123;yellow&#125;&#123;<span class="keyword">\rule</span>[-.5ex]&#123;2pt&#125;&#123;2.5ex&#125;&#125;&#125;<span class="keyword">\ULon</span>&#125;</span><br></pre></td></tr></table></figure>
+添加名为<code>\hl&#123;&#125;</code>的新操作。用<code>\hl&#123;&#125;</code>实现对文本添加黄色背景色。</p>
+<h3 id="六未编号节">【六】未编号节</h3>
+<p>参考链接：https://www.overleaf.com/learn/latex/Sections_and_chapters
+为了获得一个未编号的章(chapter)，节(section)，小节(subsection)，我们只需要在命令的后面，在花括号的前面加上星号(<span
+class="math inline">\(*\)</span>)即可。 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>*&#123;Introduction&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="七引用显示问号">【七】引用显示问号</h3>
+<p>参考链接：<a
+target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/634991/label-without-proper-reference">Label
+Without Proper Reference</a> 错误提示信息为 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package caption Warning: \label without proper reference on input line 8</span><br></pre></td></tr></table></figure>
+错误原因可能是<code>\label</code>定义在了<code>\caption</code>的前面。<code>\label</code>必须放在<code>\caption</code>的后面，修正即可。</p>
+<h3 id="八文字颜色">【八】文字颜色</h3>
+<p>参考链接： + <a
+target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/123159/undefined-control-sequence-with-green-and-red">Stack
+Exchange - Undefined control sequence with and </a> + <a
+target="_blank" rel="noopener" href="https://en.wikibooks.org/wiki/LaTeX/Colors">Latex/Colors</a>
+使用<code>\textcolor&#123;&#125;&#123;&#125;</code>命令时产生了undefined control
+sequence错误。参考网上资料，发现使用前需要使用<code>xcolor</code>包
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\usepackage</span>&#123;xcolor&#125;</span><br></pre></td></tr></table></figure> 使用<code>color</code>包也可以。</p>
+<h3 id="九代码块中插入数学表达式">【九】代码块中插入数学表达式</h3>
+<p>参考链接：<a
+target="_blank" rel="noopener" href="https://tex.stackexchange.com/questions/63729/how-to-use-mathematical-symbols-in-listing">Stack
+Exchange - How to use mathematical symbols in listing?</a>
+在<code>lstlisting</code>代码块使用<code>escapeinside</code>选项
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;lstlisting&#125;[escapeinside=&#123;(*&#125;&#123;*)&#125;]</span><br><span class="line">  if foo</span><br><span class="line">  list= &#123; (*<span class="built_in">$</span>S<span class="built_in">_</span>1,S<span class="built_in">_</span>2,S<span class="built_in">_</span>3<span class="built_in">$</span>*) &#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;lstlisting&#125;</span><br></pre></td></tr></table></figure>
+在这个例子中，<code>(*</code>和<code>*)</code>中的内容将正常排版。</p>
+<h3 id="十调整行距">【十】调整行距</h3>
+<p>参考链接：<a
+target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX#\baselineskip_and_other_parameters">Overleaf
+Official Document - How to change paragraph spacing in LaTeX</a>
+如下图所示，我们需要修改的应该是<code>\baselineskip</code>参数。 <img
+src="latex-3.png" /></p>
+<h3 id="十一单行if-then">【十一】单行if-then</h3>
+<p>参考链接：https://tex.stackexchange.com/questions/555746/algorithm2e-get-rid-of-newline-after-then
+这里使用的是algorithm2e包。下面的代码展示了两种if-then语句
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt,a4paper]&#123;article&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;algorithm2e&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;algorithm&#125;</span><br><span class="line">                <span class="keyword">\If</span>&#123;cond&#125;&#123;</span><br><span class="line">                        stmt1<span class="keyword">\;</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">\lIf</span>&#123;cond&#125;&#123;</span><br><span class="line">                        stmt2</span><br><span class="line">                &#125;</span><br><span class="line">                other things</span><br><span class="line"><span class="keyword">\end</span>&#123;algorithm&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure>
+第一种情况是正常的then之后换行的格式。第二种情况使用了<code>\lIf</code>，在then之后不会换行。并且，<code>\;</code>会自动添加。</p>
 
     </div>
 
@@ -281,11 +328,11 @@ FV(s) \\
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2023/03/14/2023-git-note/" rel="prev" title="Git使用笔记">
-      <i class="fa fa-chevron-left"></i> Git使用笔记
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2025/01/06/helloworld/" rel="next" title="helloworld">
+      helloworld <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -344,9 +391,7 @@ FV(s) \\
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80-%E5%A6%82%E4%BD%95%E5%9C%A8%E5%88%97%E8%A1%A8%E4%B8%AD%E6%89%93%E5%8D%B0%E7%9B%B4%E5%BC%95%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">【问题一】
-如何在列表中打印直引号？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%E4%BD%BF%E7%94%A8lstdefinelanguage"><span class="nav-number">2.</span> <span class="nav-text">【问题二】使用lstdefinelanguage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%89package-hyperref-warning"><span class="nav-number">3.</span> <span class="nav-text">【问题三】Package hyperref
-Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%9B%9B%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E5%A4%9A%E5%A4%84%E5%AF%B9%E9%BD%90"><span class="nav-number">4.</span> <span class="nav-text">【问题四】数学公式多处对齐</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E6%B7%BB%E5%8A%A0%E7%9B%B4%E5%BC%95%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">【一】 添加直引号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E4%BB%A3%E7%A0%81%E5%9D%97%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%9B%B4%E5%BC%95%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text">1.在代码块中添加直引号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%AD%A3%E6%96%87%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%9B%B4%E5%BC%95%E5%8F%B7"><span class="nav-number">1.2.</span> <span class="nav-text">2.在正文中添加直引号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E4%BD%BF%E7%94%A8lstdefinelanguage"><span class="nav-number">2.</span> <span class="nav-text">【二】使用lstdefinelanguage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89package-hyperref-warning"><span class="nav-number">3.</span> <span class="nav-text">【三】Package hyperref Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E5%A4%9A%E5%A4%84%E5%AF%B9%E9%BD%90"><span class="nav-number">4.</span> <span class="nav-text">【四】数学公式多处对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E8%83%8C%E6%99%AF%E8%89%B2%E4%B8%8E%E6%8D%A2%E8%A1%8C"><span class="nav-number">5.</span> <span class="nav-text">【五】背景色与换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E6%9C%AA%E7%BC%96%E5%8F%B7%E8%8A%82"><span class="nav-number">6.</span> <span class="nav-text">【六】未编号节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83%E5%BC%95%E7%94%A8%E6%98%BE%E7%A4%BA%E9%97%AE%E5%8F%B7"><span class="nav-number">7.</span> <span class="nav-text">【七】引用显示问号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB%E6%96%87%E5%AD%97%E9%A2%9C%E8%89%B2"><span class="nav-number">8.</span> <span class="nav-text">【八】文字颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E4%BB%A3%E7%A0%81%E5%9D%97%E4%B8%AD%E6%8F%92%E5%85%A5%E6%95%B0%E5%AD%A6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">【九】代码块中插入数学表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E8%B0%83%E6%95%B4%E8%A1%8C%E8%B7%9D"><span class="nav-number">10.</span> <span class="nav-text">【十】调整行距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E5%8D%95%E8%A1%8Cif-then"><span class="nav-number">11.</span> <span class="nav-text">【十一】单行if-then</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -360,18 +405,18 @@ Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -398,7 +443,7 @@ Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -419,6 +464,7 @@ Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href
       </div>
     </footer>
   </div>
+
 
   
   <script src="/lib/anime.min.js"></script>
@@ -457,6 +503,59 @@ Warning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
