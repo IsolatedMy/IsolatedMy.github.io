@@ -1206,7 +1206,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff13ff;
+  background: #1fffb0;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2334,8 +2334,10 @@ embed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.article-entry p {
-  margin-bottom: 1.2em;
-  margin-top: 0;
+.post-block {
+  padding: 25px;
+  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  line-height: 1.8;
 }
 /* @import "_custom/codeblock.styl" */
