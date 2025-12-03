@@ -8,6 +8,7 @@
   border-image: initial;
   position: relative;
 }
+/* $font-size-small = 0.6em; */
 :root {
   --body-bg-color: #fff;
   --content-bg-color: #fff;
@@ -641,7 +642,7 @@ pre .javascript .function {
   background: #fae8eb;
 }
 .post-body .tabs {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .post-body .tabs,
 .tabs-comment {
@@ -1206,7 +1207,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #1fffb0;
+  background: #99ffcd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2339,5 +2340,15 @@ embed {
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
   line-height: 1.8;
+}
+:not(pre) > code {
+/* 行内代码的样式 */
+  padding: 0.2em 0.4em; /* 给行内代码一点背景填充 */
+  font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace; /* 等宽字体 */
+  font-size: 0.9em; /* 可以稍小一些 */
+  color: #e96900; /* 突出颜色 */
+  background-color: #f8f8f8; /* 浅色背景 */
+  border-radius: 3px; /* 轻微圆角 */
+  white-space: nowrap; /* 确保行内代码不折行 */
 }
 /* @import "_custom/codeblock.styl" */
